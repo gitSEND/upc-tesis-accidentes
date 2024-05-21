@@ -1,0 +1,32 @@
+.person-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .person-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+    padding: 24px;
+
+  }
+
+  .person-result {
+    padding: 24px;
+    height: 100%;
+
+    span {
+      font-weight: normal;
+    }
+  }
+}
+
+::ng-deep .p-dropdown {
+  width: 100%;
+}

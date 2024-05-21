@@ -1,0 +1,58 @@
+<h3>Predicción de probabilidad de accidentes</h3>
+
+<section class="person-container">
+  <!-- ingreso de datos -->
+  <form [formGroup]="formGroup">
+    <fieldset class="person-form">
+      <legend>Lista de parámentro</legend>
+      <label for="">Edad</label>
+      <input type="number" pInputText formControlName="edadCntrl" placeholder="Ingresa tu edad" />
+
+      <label for="">Sexo</label>
+      <p-dropdown formControlName="sexoCntrl" [options]="sexo" placeholder="Selecciona tu sexo" />
+
+      <label for="">Clima</label>
+      <p-dropdown formControlName="climaCntrl" [options]="clima" placeholder="Selecciona el clima" />
+
+      <label for="">Distrito</label>
+      <p-dropdown formControlName="distritoCntrl" [options]="distrito" placeholder="Selecciona el distrito" />
+
+      <label for="">Tipo de Siniestro</label>
+      <p-dropdown formControlName="siniestroCntrl" [options]="siniestro"
+        placeholder="Selecciona el tipo de siniestro" />
+
+      <label for="">Condición de la vía</label>
+      <p-dropdown formControlName="viaCntrl" [options]="condincionVia"
+        placeholder="Selecciona la condición de la vía" />
+
+      <label for="">Franja horaria</label>
+      <p-dropdown formControlName="horarioCntrl" [options]="franjaHoraria" placeholder="Selecciona la franja horaria" />
+
+      <p-button label="Predecir" (onClick)="predecir()" />
+
+    </fieldset>
+  </form>
+
+  <!-- resultado -->
+
+  <fieldset class="person-result">
+    <legend>Resultado</legend>
+
+    @if (showResult) {
+      <h1 style="color: green;">Riesgo Nivel 1 : Bajo</h1>
+      <h1 style="color: orange;">Riesgo Nivel 2 : Medio</h1>
+      <h1 style="color: red;">Riesgo Nivel 3 : Alto</h1>
+
+      <h5>Edad: <span>{{formGroup.get('edadCntrl')!.value}}</span></h5>
+      <h5>Sexo: <span>{{formGroup.get('sexoCntrl')!.value}}</span></h5>
+      <h5>Clima: <span>{{formGroup.get('climaCntrl')!.value}}</span></h5>
+      <h5>Distrito: <span>{{formGroup.get('distritoCntrl')!.value}}</span></h5>
+      <h5>Tipo de Siniestro: <span>{{formGroup.get('siniestroCntrl')!.value}}</span></h5>
+      <h5>Condición de la vía: <span>{{formGroup.get('viaCntrl')!.value}}</span></h5>
+      <h5>Franja horaria: <span>{{formGroup.get('horarioCntrl')!.value}}</span></h5>
+
+      <hr>
+      <h5>Probabilidad: <span>{{probabilidad}}</span> </h5>
+    }
+  </fieldset>
+</section>

@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4a4747;
+  color: #fff;
+  height: 50px;
+  padding: 0 20px;
+
+  &__links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.body {
+  padding: 20px;
+}
